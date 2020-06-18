@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ViewController: UIViewController {
 
@@ -16,5 +17,12 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func didPressButton(_ sender: UIButton) {
+        if let urlObject = URL(string: "https://google.com") {
+            let safariViewController = SFSafariViewController(url: urlObject)
+            present(safariViewController, animated: true, completion: nil)
+        }
+        
+    }
 }
 
