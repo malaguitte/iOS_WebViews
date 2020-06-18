@@ -15,34 +15,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3WV-Dz-Gsy">
-                                <rect key="frame" x="166.5" y="44" width="81" height="30"/>
-                                <state key="normal" title="Open Safari"/>
-                                <connections>
-                                    <action selector="didPressButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uOf-Iv-snh"/>
-                                </connections>
-                            </button>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eE2-Vs-Mho">
-                                <rect key="frame" x="0.0" y="82" width="414" height="792"/>
+                                <rect key="frame" x="0.0" y="82" width="414" height="814"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mzs-so-EyI">
+                                <rect key="frame" x="78" y="40" width="316" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6I-CP-0fW">
+                                <rect key="frame" x="20" y="46" width="50" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="lxS-CQ-iBN"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="arrow.uturn.left" catalog="system"/>
+                                <connections>
+                                    <action selector="didPressBackButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UGv-7S-HuB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="eE2-Vs-Mho" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Z4-lY-Kgn"/>
-                            <constraint firstItem="eE2-Vs-Mho" firstAttribute="top" secondItem="3WV-Dz-Gsy" secondAttribute="bottom" constant="8" id="6as-Gg-RbL"/>
-                            <constraint firstItem="3WV-Dz-Gsy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Cug-hV-h8s"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="eE2-Vs-Mho" secondAttribute="bottom" constant="-12" id="Nl4-pc-V66"/>
-                            <constraint firstItem="eE2-Vs-Mho" firstAttribute="centerX" secondItem="3WV-Dz-Gsy" secondAttribute="centerX" id="Vcu-wB-PjH"/>
-                            <constraint firstItem="3WV-Dz-Gsy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nl3-dw-JLx"/>
+                            <constraint firstItem="eE2-Vs-Mho" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Uw-VP-z1k"/>
+                            <constraint firstItem="Mzs-so-EyI" firstAttribute="leading" secondItem="a6I-CP-0fW" secondAttribute="trailing" constant="8" id="BnL-vU-iCY"/>
+                            <constraint firstItem="eE2-Vs-Mho" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FUR-gT-4GT"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="eE2-Vs-Mho" secondAttribute="bottom" constant="-34" id="Wb2-pX-mcW"/>
+                            <constraint firstItem="a6I-CP-0fW" firstAttribute="centerY" secondItem="Mzs-so-EyI" secondAttribute="centerY" id="WdP-IC-mug"/>
+                            <constraint firstItem="a6I-CP-0fW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2" id="Zmg-vs-gAf"/>
+                            <constraint firstItem="eE2-Vs-Mho" firstAttribute="top" secondItem="Mzs-so-EyI" secondAttribute="bottom" constant="8" id="iff-cX-41g"/>
+                            <constraint firstItem="a6I-CP-0fW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="tbl-f1-Cc6"/>
+                            <constraint firstItem="Mzs-so-EyI" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="zxe-R2-272"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="textField" destination="Mzs-so-EyI" id="cAE-48-JNK"/>
                         <outlet property="webView" destination="eE2-Vs-Mho" id="Lpw-bt-c0h"/>
                     </connections>
                 </viewController>
@@ -51,4 +63,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="120.53571428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow.uturn.left" catalog="system" width="128" height="112"/>
+    </resources>
 </document>
