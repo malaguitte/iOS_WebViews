@@ -9,17 +9,22 @@
 import UIKit
 import SafariServices
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SFSafariViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        print("Finished!")
     }
 
 
     @IBAction func didPressButton(_ sender: UIButton) {
         if let urlObject = URL(string: "https://google.com") {
             let safariViewController = SFSafariViewController(url: urlObject)
+            safariViewController.delegate = self
             present(safariViewController, animated: true, completion: nil)
         }
         
