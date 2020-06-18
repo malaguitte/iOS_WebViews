@@ -8,12 +8,20 @@
 
 import UIKit
 import SafariServices
+import WebKit
 
 class ViewController: UIViewController, SFSafariViewControllerDelegate {
+    let WEBSITE_ADDRESS = "https://google.com"
 
+    @IBOutlet weak var webView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        if let urlObject = URL(string: WEBSITE_ADDRESS) {
+            webView.load(URLRequest(url: urlObject))
+        }
     }
     
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
@@ -22,17 +30,25 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
 
 
     @IBAction func didPressButton(_ sender: UIButton) {
-        if let urlObject = URL(string: "https://google.com") {
+        //Opens safari
+        self.openSafariApp(url: WEBSITE_ADDRESS)
             
-            //Opens safari
+        //Opens safari view controller (within the current app)
+        //self.openSafariControllerView(url: WEBSITE_ADDRESS)
+    }
+    
+    func openSafariApp(url: String) {
+        if let urlObject = URL(string: url) {
             UIApplication.shared.open(urlObject, options: [:], completionHandler: nil)
-            
-            //Opens safari view controller (within the current app)
-//            let safariViewController = SFSafariViewController(url: urlObject)
-//            safariViewController.delegate = self
-//            present(safariViewController, animated: true, completion: nil)
         }
-        
+    }
+    
+    func openSafariControllerView(url: String) {
+        if let urlObject = URL(string: url) {
+            let safariViewController = SFSafariViewController(url: urlObject)
+            safariViewController.delegate = self
+            present(safariViewController, animated: true, completion: nil)
+        }
     }
 }
 

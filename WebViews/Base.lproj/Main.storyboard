@@ -16,24 +16,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3WV-Dz-Gsy">
-                                <rect key="frame" x="173" y="433" width="68" height="30"/>
-                                <state key="normal" title="Web View"/>
+                                <rect key="frame" x="166.5" y="44" width="81" height="30"/>
+                                <state key="normal" title="Open Safari"/>
                                 <connections>
                                     <action selector="didPressButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uOf-Iv-snh"/>
                                 </connections>
                             </button>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eE2-Vs-Mho">
+                                <rect key="frame" x="0.0" y="82" width="414" height="792"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="3WV-Dz-Gsy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2iA-NW-4yl"/>
-                            <constraint firstItem="3WV-Dz-Gsy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Gf2-Pm-FQf"/>
+                            <constraint firstItem="eE2-Vs-Mho" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Z4-lY-Kgn"/>
+                            <constraint firstItem="eE2-Vs-Mho" firstAttribute="top" secondItem="3WV-Dz-Gsy" secondAttribute="bottom" constant="8" id="6as-Gg-RbL"/>
+                            <constraint firstItem="3WV-Dz-Gsy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Cug-hV-h8s"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="eE2-Vs-Mho" secondAttribute="bottom" constant="-12" id="Nl4-pc-V66"/>
+                            <constraint firstItem="eE2-Vs-Mho" firstAttribute="centerX" secondItem="3WV-Dz-Gsy" secondAttribute="centerX" id="Vcu-wB-PjH"/>
+                            <constraint firstItem="3WV-Dz-Gsy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nl3-dw-JLx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="eE2-Vs-Mho" id="Lpw-bt-c0h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="121"/>
+            <point key="canvasLocation" x="137.68115942028987" y="120.53571428571428"/>
         </scene>
     </scenes>
 </document>
