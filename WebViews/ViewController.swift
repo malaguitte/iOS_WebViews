@@ -23,9 +23,14 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
 
     @IBAction func didPressButton(_ sender: UIButton) {
         if let urlObject = URL(string: "https://google.com") {
-            let safariViewController = SFSafariViewController(url: urlObject)
-            safariViewController.delegate = self
-            present(safariViewController, animated: true, completion: nil)
+            
+            //Opens safari
+            UIApplication.shared.open(urlObject, options: [:], completionHandler: nil)
+            
+            //Opens safari view controller (within the current app)
+//            let safariViewController = SFSafariViewController(url: urlObject)
+//            safariViewController.delegate = self
+//            present(safariViewController, animated: true, completion: nil)
         }
         
     }
